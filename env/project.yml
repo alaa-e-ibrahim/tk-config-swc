@@ -1,0 +1,47 @@
+# Copyright (c) 2017 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+#
+
+description: Apps and Engines when launching with a project only context.
+
+################################################################################
+
+includes:
+- ./includes/frameworks.yml
+- ./includes/settings/tk-3dsmax.yml
+- ./includes/settings/tk-desktop.yml
+- ./includes/settings/tk-houdini.yml
+- ./includes/settings/tk-maya.yml
+- ./includes/settings/tk-photoshopcc.yml
+- ./includes/settings/tk-substancedesigner.yml
+- ./includes/settings/tk-substancepainter.yml
+- ./includes/settings/tk-shell.yml
+- ./includes/settings/tk-shotgun.yml
+- ./includes/settings/tk-multi-perforce.yml
+- ./includes/settings/tk-unreal.yml
+
+################################################################################
+# configuration for all engines to load in a project context
+
+engines:
+  tk-3dsmax: "@settings.tk-3dsmax.project"
+  tk-desktop: "@settings.tk-desktop.project"
+  tk-houdini: "@settings.tk-houdini.project"
+  tk-maya: "@settings.tk-maya.project"
+  tk-photoshopcc: "@settings.tk-photoshopcc.project"
+  tk-substancedesigner: "@settings.tk-substancedesigner.project"
+  tk-substancepainter: "@settings.tk-substancepainter.project"
+  tk-shell: "@settings.tk-shell.project"
+  tk-shotgun: "@settings.tk-shotgun.project"
+  tk-unreal: "@settings.tk-unreal.project"
+################################################################################
+# reference all of the common frameworks
+
+frameworks: "@frameworks"
