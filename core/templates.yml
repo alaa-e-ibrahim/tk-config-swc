@@ -1,0 +1,824 @@
+# Copyright (c) 2015 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+
+#
+# This file is one of the central points in the Shotgun Pipeline Toolkit configuration and
+# a counterpart to the folder configuration structure.
+#
+# The folder structure underneath the project folder is used to create folders on disk -
+# templates.yml (this file) refers to those folders. Therefore, the two files need to be
+# in sync. This file contains an overview of all locations that are used by Sgtk.
+#
+# Whenever an app or an engine refers to a location on disk, it is using an entry defined in
+# this file. For more information, see the Shotgun Pipeline Toolkit Documentation.
+
+
+
+#
+# The keys section contains the definitions for all the different keys that are being
+# used by Sgtk. A key is a magic token that is replaced by a value at runtime, for example
+# {Shot}. The section below tells Sgtk which data types and formats to expect for each key.
+#
+keys:
+
+    #
+    # Common Keys
+    #
+
+    Project:
+        type: str
+        shotgun_entity_type: Project
+        shotgun_field_name: code
+    Asset:
+        type: str    
+    Task:
+        type: str
+        shotgun_entity_type: Task
+        shotgun_field_name: content
+    Sequence:
+        type: str
+    Shot:
+        type: str        
+    task_step:
+        type: str
+        shotgun_entity_type: Task
+        shotgun_field_name: step.Step.short_name
+    task_folder:
+        type: str
+        shotgun_entity_type: Task
+        shotgun_field_name: sg_folder_name
+    task_subfolder:
+        type: str
+        shotgun_entity_type: Task
+        shotgun_field_name: sg_subfolder_name        
+    asset_parent:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_parent.Asset.code
+    seq_asset_parent:  
+        type: str
+        shotgun_entity_type: Sequence
+        shotgun_field_name: sg_asset_parent.Sequence.code  
+    asset_library:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_library.AssetLibrary.code
+    seq_asset_library:
+        type: str
+        shotgun_entity_type: Sequence
+        shotgun_field_name: sg_asset_library.AssetLibrary.code
+    asset_library_parent:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_parent.Asset.sg_asset_library.AssetLibrary.code
+    seq_asset_library_parent:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_parent.Sequence.sg_asset_library.AssetLibrary.code
+    shot_asset_library_parent:
+        type: str
+        shotgun_entity_type: Shot
+        shotgun_field_name: sg_sequence.Sequence.sg_asset_library.AssetLibrary.code
+    asset_type:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_type
+    asset_type_parent:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_parent.Asset.sg_asset_type
+    asset_category:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_category
+    asset_category_parent:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_parent.Asset.sg_asset_category
+    Step:
+        type: str
+    name:
+        type: str
+        filter_by: alphanumeric
+    iteration:
+        type: int
+    version:
+        type: int
+        format_spec: "03"
+    version_four:
+       type: int
+       format_spec: "04"
+       alias: version
+    timestamp:
+        type: str
+    width:
+        type: str
+        shotgun_entity_type: Task
+        shotgun_field_name: sg_width
+    height:
+        type: str
+        shotgun_entity_type: Task
+        shotgun_field_name: sg_height        
+    segment_name:
+        type: str
+    # these are used by the Unreal
+    YYYY:
+        type: int
+        format_spec: "04"
+    MM:
+        type: int
+        format_spec: "02"
+    DD:
+        type: int
+        format_spec: "02"
+        alias: DD
+    ext:
+        type: str
+        alias: extension  
+    short_code:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_short_code       
+    task_short_code:
+        type: str
+        shotgun_entity_type: Task
+        shotgun_field_name: entity.Asset.sg_short_code             
+    parent_short_code:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_parent.Asset.sg_short_code
+
+    step_subfolder:
+        type: str
+        shotgun_entity_type: Project
+        shotgun_field_name: sg_step_subfolder
+
+    step_folder:
+        type: str
+        shotgun_entity_type: Step
+        shotgun_field_name: sg_step_folder  
+    folder_name:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_folder_name       
+    asset_name:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: code            
+
+    # Animation Asset
+    CustomEntity05:
+        type: str
+    anim_asset_name:
+        type: str
+        shotgun_entity_type: CustomEntity05
+        shotgun_field_name: code
+    anim_asset_library:
+        type: str
+        shotgun_entity_type: CustomEntity05
+        shotgun_field_name: sg_asset_library.AssetLibrary.code 
+    anim_asset_category:
+        type: str
+        shotgun_entity_type: CustomEntity05
+        shotgun_field_name: sg_asset_category           
+    anim_folder_name:
+        type: str
+        shotgun_entity_type: CustomEntity05
+        shotgun_field_name: sg_folder_name   
+    anim_asset_parent:
+        type: str
+        shotgun_entity_type: CustomEntity05
+        shotgun_field_name: sg_asset_parent.Asset.code
+    anim_asset_library_parent:
+        type: str
+        shotgun_entity_type: CustomEntity05
+        shotgun_field_name: sg_asset_parent.Asset.sg_asset_library.AssetLibrary.code
+    anim_asset_type_parent:
+        type: str
+        shotgun_entity_type: CustomEntity05
+        shotgun_field_name: sg_asset_parent.Asset.sg_asset_type
+    anim_asset_category_parent:
+        type: str
+        shotgun_entity_type: CustomEntity05
+        shotgun_field_name: sg_asset_parent.Asset.sg_asset_category        
+
+    # Environment Asset
+    CustomEntity01:
+        type: str
+    env_asset_name:
+        type: str
+        shotgun_entity_type: CustomEntity01
+        shotgun_field_name: code
+    env_asset_library:
+        type: str
+        shotgun_entity_type: CustomEntity01
+        shotgun_field_name: sg_asset_library.AssetLibrary.code 
+    env_asset_category:
+        type: str
+        shotgun_entity_type: CustomEntity01
+        shotgun_field_name: sg_asset_category         
+    env_asset_class:
+        type: str
+        shotgun_entity_type: CustomEntity01
+        shotgun_field_name: sg_asset_class      
+    env_asset_type:
+        type: str
+        shotgun_entity_type: CustomEntity01
+        shotgun_field_name: sg_asset_type  
+    biome:
+        type: str
+        shotgun_entity_type: CustomEntity01
+        shotgun_field_name: sg_biome     
+    env_folder_name:
+        type: str
+        shotgun_entity_type: CustomEntity01
+        shotgun_field_name: sg_folder_name                    
+
+    # Publishing Asset
+    CustomEntity03:
+        type: str 
+    Product:
+        type: str
+        shotgun_entity_type: CustomEntity03
+        shotgun_field_name: sg_product.CustomNonProjectEntity01.sg_short_code
+    Campaign:
+        type: str
+        shotgun_entity_type: CustomEntity03
+        shotgun_field_name: sg_campaign   
+    use:
+        type: str
+        shotgun_entity_type: CustomEntity03
+        shotgun_field_name: sg_use     
+    pub_folder_name:
+        type: str
+        shotgun_entity_type: CustomEntity03
+        shotgun_field_name: sg_folder_name    
+    pub_asset_type:
+        type: str
+        shotgun_entity_type: CustomEntity03
+        shotgun_field_name: sg_asset_type  
+
+
+    #
+    # Houdini
+    #
+
+    houdini.node:
+        alias: node
+        type: str
+    aov_name:
+        type: str
+    SEQ:
+        type: sequence
+        format_spec: "04"
+
+    #
+    # Photoshop
+    #
+
+    photoshop_extension:
+        type: str
+        choices:
+            psd: Photoshop (.psd)
+            psb: Large Document Format (.psb)
+        default: psd
+        alias: extension
+
+    #
+    # Maya
+    #
+
+    maya_extension:
+        type: str
+        choices:
+            ma: Maya Ascii (.ma)
+            mb: Maya Binary (.mb)
+        default: ma
+        alias: extension
+
+    # These are used by the Loader in Unreal
+    sg_asset_type_ue4:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: sg_asset_type
+    sg_asset_name:
+        type: str
+        shotgun_entity_type: Asset
+        shotgun_field_name: code
+    sg_shot_name:
+        type: str
+        shotgun_entity_type: Shot
+        shotgun_field_name: code
+    sg_sequence_name:
+        type: str
+        shotgun_entity_type: Shot
+        shotgun_field_name: sg_sequence
+
+    # These are used by the Movie Publish in Unreal
+    level_sequence:
+        type: str
+    world:
+        type: str
+    #
+    # Substance Painter
+    #
+
+    texture_extension:
+        type: str
+        alias: extension
+
+    texture_name:
+        type: str
+
+    #
+    # Substance Designer
+    #
+
+    substancedesigner.texture_extension:
+        type: str
+        alias: extension
+
+    substancedesigner.channel:
+        type: str
+        alias: channel
+
+    substancedesigner.package.name:
+        type: str
+        alias: name
+
+    substancedesigner.graph.name:
+        type: str
+
+    substancedesigner.extension:
+        type: str
+        choices:
+            sbs: Substance Design File (.sbs)
+        default: sbs
+        alias: extension
+
+#
+# The paths section contains all the the key locations where files are to be stored
+# by Sgtk Apps. Each path is made up of several keys (like {version} or {shot}) and
+# these are defined in the keys section above.
+#
+# Apps use these paths as part of their configuration to define where on disk
+# different files should go.
+#
+
+paths:
+
+    # Common  path definitions to use as shorthand in order to avoid repetitive and verbose
+    # templates. This also makes it easy to change any of the common root paths and have the
+    # changes apply to all templates that use them.
+    #
+    # These don't require the standard formatting (with definition and root_name) because they
+    # will be set within each template that uses the alias.
+    asset_root: 'Content/{asset_library}/{asset_type}/{asset_category}/{Asset}'
+    asset_child_root: 'Content/{asset_library_parent}/{asset_type_parent}/{asset_category_parent}/{asset_parent}/{asset_category}/{folder_name}'
+    sequence_root: 'Content/{seq_asset_library}/Sequences/{Sequence}'
+    shot_root: 'Content/{shot_asset_library_parent}/Sequences/{Sequence}/{Shot}'
+    seq_asset_root: 'Content/{seq_asset_library_parent}/Sequences/{seq_asset_parent}/{asset_type}/{asset_category}/{Asset}'    
+
+    env_asset_root: 'Content/{env_asset_library}/{env_asset_type}/{biome}/{env_asset_category}/{env_folder_name}'
+    pub_asset_root: '{pub_asset_type}/{Campaign}/{Product}/{use}/{CustomEntity03}'
+    prod_asset_root: '{pub_asset_type}/{Product}/{use}/{CustomEntity03}'
+
+    asset_work_area: '@asset_root/{step_folder}/{Step}' 
+    asset_filename: '@asset_work_area/{Asset}[_{name}][_{Step}]'
+    asset_snapshot_filename: '@asset_work_area/snapshots/{Asset}[_{name}][_{Step}].{timestamp}'
+    
+    asset_child_work_area: '@asset_child_root/{step_folder}/{Step}/'
+    asset_child_filename: '@asset_child_work_area/{asset_name}[_{name}][_{Step}]'
+    asset_child_snapshot_filename: '@asset_child_work_area/snapshots/{asset_name}[_{name}][_{Step}].{timestamp}'
+
+    sequence_filename: '@sequence_root/{Sequence}[_{name}]'
+    sequence_snapshot_filename: '@sequence_root/snapshots/{Sequence}[_{name}].{timestamp}'
+    sequence_work_area: '@sequence_root/{Step}' 
+    sequence_task_filename: '@sequence_work_area/{Sequence}[_{Task}][_{name}]'
+    sequence_task_snapshot_filename: '@sequence_work_area/snapshots/{Sequence}[_{Task}][_{name}].{timestamp}'
+
+    shot_filename: '@shot_root/{Shot}[_{name}]'
+    shot_snapshot_filename: '@shot_root/snapshots/{Shot}[_{name}].{timestamp}'
+    shot_work_area: '@shot_root/{Step}' 
+    shot_task_filename: '@shot_work_area/{Shot}[_{Task}][_{name}]'
+    shot_task_snapshot_filename: '@shot_work_area/snapshots/{Shot}[_{Task}][_{name}].{timestamp}'
+
+    seq_asset_work_area: '@seq_asset_root/{Step}/{Task}' 
+    seq_asset_filename: '@seq_asset_work_area/{asset_name}[_{name}][_{Task}]'
+
+    anim_asset_work_area: 'Content/{asset_library_parent}/{asset_type_parent}/{asset_category_parent}/{asset_parent}/{asset_type}/{asset_category}/{folder_name}'
+    anim_asset_filename: '@anim_asset_work_area/[{asset_name}_]{Task}[_{name}]'
+    anim_asset_snapshot_filename: '@anim_asset_work_area/snapshots/[{asset_name}_]{Task}[_{name}].{timestamp}'     
+
+    env_asset_work_area: '@env_asset_root/{step_folder}/{Step}'
+    env_asset_filename: '@env_asset_work_area/{env_asset_name}[_{name}][_{Step}]'
+    env_asset_snapshot_filename: '@env_asset_work_area/{env_asset_name}[_{name}][_{Step}].{timestamp}'
+    
+    pub_asset_filename: '@pub_asset_root/{task_step}/{Product}_{Campaign}_{CustomEntity03}_{Task}[_{width}x{height}][_{name}]'
+    pub_asset_snapshot_filename: '@pub_asset_root/{task_step}/snapshots/{Product}_{Campaign}_{CustomEntity03}_{Task}[_{width}x{height}][_{name}].{timestamp}'
+    prod_asset_filename: '@prod_asset_root/{task_step}/{Product}_{CustomEntity03}_{Task}[_{width}x{height}][_{name}]'
+    prod_asset_snapshot_filename: '@prod_asset_root/{task_step}/snapshots/{Product}_{CustomEntity03}_{Task}[_{width}x{height}][_{name}].{timestamp}'
+
+
+    #
+    # Unreal
+    #
+
+    # level sequence review output from unreal
+    unreal_movie_publish:
+        definition: '[sequences/{Sequence}/][{Shot}/]editorial/{YYYY}_{MM}_{DD}/unreal/{level_sequence}_{world}.v{version}.avi'
+    unreal_shot_publish:
+        definition: '@shot_root/publish/unreal/{name}.v{version}.nk'
+
+    ##########################################################################################
+    # Asset pipeline
+
+    #
+    # Alembic caches
+    #
+
+    asset_alembic_cache:
+        definition: '@asset_root/caches/{Asset}[_{name}]_{task_step}.abc'
+    env_asset_alembic_cache:
+        definition: '@env_asset_root/caches/{CustomEntity01}[_{name}]_{task_step}.abc'           
+    pub_asset_alembic_cache:
+        definition: '@pub_asset_root/caches/{CustomEntity03}[_{name}]_{task_step}.abc'        
+
+    #
+    # Generic
+    #
+
+    # # asset
+    # asset_workfile:
+    #     definition: '@asset_filename.{ext}'
+    # asset_snapshot:
+    #     definition: '@asset_snapshot_filename.{ext}'
+
+    # asset_child_workfile:
+    #     definition: '@asset_child_filename.{ext}'
+    # asset_child_snapshot:
+    #     definition: '@asset_child_snapshot_filename.{ext}'
+
+    # anim_asset_workfile:
+    #     definition: '@anim_asset_filename.{ext}'
+    # anim_asset_snapshot:
+    #     definition: '@anim_asset_snapshot_filename.{ext}'        
+
+    # env_asset_workfile:
+    #     definition: '@env_asset_filename.{ext}'
+    # env_asset_snapshot:
+    #     definition: '@env_asset_snapshot_filename.{ext}'
+
+    # pub_asset_workfile:
+    #     definition: '@pub_asset_filename.{ext}'
+    # pub_asset_snapshot:
+    #     definition: '@pub_asset_snapshot_filename.{ext}'
+
+    # prod_asset_workfile:
+    #     definition: '@prod_asset_filename.{ext}'
+    # prod_asset_snapshot:
+    #     definition: '@prod_asset_snapshot_filename.{ext}'        
+
+    #
+    # Photoshop
+    #
+
+    # asset
+    asset_photoshop_workfile:
+        definition: '@asset_filename.{photoshop_extension}'
+    asset_photoshop_snapshot:
+        definition: '@asset_snapshot_filename.{photoshop_extension}'
+
+    asset_child_photoshop_workfile:
+        definition: '@asset_child_filename.{photoshop_extension}'
+    asset_child_photoshop_snapshot:
+        definition: '@asset_child_snapshot_filename.{photoshop_extension}'
+
+    env_asset_photoshop_workfile:
+        definition: '@env_asset_filename.{photoshop_extension}'
+    env_asset_photoshop_snapshot:
+        definition: '@env_asset_snapshot_filename.{photoshop_extension}'
+
+    pub_asset_photoshop_workfile:
+        definition: '@pub_asset_filename.{photoshop_extension}'
+    pub_asset_photoshop_snapshot:
+        definition: '@pub_asset_snapshot_filename.{photoshop_extension}'
+
+    prod_asset_photoshop_workfile:
+        definition: '@prod_asset_filename.{photoshop_extension}'
+    prod_asset_photoshop_snapshot:
+        definition: '@prod_asset_snapshot_filename.{photoshop_extension}'
+
+    #
+    # Maya
+    #
+
+    # asset
+    asset_maya_workfile:
+        definition: '@asset_filename.{maya_extension}'
+    asset_maya_snapshot:
+        definition: '@asset_snapshot_filename.{maya_extension}'
+
+    sequence_maya_workfile:
+        definition: '@sequence_filename.{maya_extension}'
+    sequence_maya_snapshot:
+        definition: '@sequence_snapshot_filename.{maya_extension}'
+
+    sequence_task_maya_workfile:
+        definition: '@sequence_task_filename.{maya_extension}'
+    sequence_task_maya_snapshot:
+        definition: '@sequence_task_snapshot_filename.{maya_extension}'
+
+    shot_maya_workfile:
+        definition: '@shot_filename.{maya_extension}'
+    shot_maya_snapshot:
+        definition: '@shot_snapshot_filename.{maya_extension}'
+
+    shot_task_maya_workfile:
+        definition: '@shot_task_filename.{maya_extension}'
+    shot_task_maya_snapshot:
+        definition: '@shot_task_snapshot_filename.{maya_extension}'
+
+    asset_child_maya_workfile:
+        definition: '@asset_child_filename.{maya_extension}'
+    asset_child_maya_snapshot:
+        definition: '@asset_child_snapshot_filename.{maya_extension}'
+
+    anim_asset_maya_workfile:
+        definition: '@anim_asset_filename.{maya_extension}'
+    anim_asset_maya_snapshot:
+        definition: '@anim_asset_snapshot_filename.{maya_extension}'        
+
+    env_asset_maya_workfile:
+        definition: '@env_asset_filename.{maya_extension}'
+    env_asset_maya_snapshot:
+        definition: '@env_asset_snapshot_filename.{maya_extension}'
+
+    pub_asset_maya_workfile:
+        definition: '@pub_asset_filename.{maya_extension}'
+    pub_asset_maya_snapshot:
+        definition: '@pub_asset_snapshot_filename.{maya_extension}'
+
+    prod_asset_maya_workfile:
+        definition: '@prod_asset_filename.{maya_extension}'
+    prod_asset_maya_snapshot:
+        definition: '@prod_asset_snapshot_filename.{maya_extension}'        
+
+    # The location of FBX exports for Unreal
+    maya_asset_fbx_publish:
+        definition: '@asset_root/publish/fbx/{name}.v{version}.fbx'
+    # The location of turntable review output rendered in Unreal
+    maya_ue4_turntable_render:
+        definition: '@asset_root/work/images/{name}_turntable_v{version}.avi'
+    maya_ue4_turntable_publish:
+        definition: '@asset_root/review/{Asset}_{name}_turntable_v{version}.avi'
+
+    #
+    # Houdini
+    #
+
+    # asset
+    asset_houdini_workfile:
+        definition: '@asset_filename.hip'
+    asset_houdini_snapshot:
+        definition: '@asset_snapshot_filename.hip'
+
+    sequence_houdini_workfile:
+        definition: '@sequence_filename.hip'
+    sequence_houdini_snapshot:
+        definition: '@sequence_snapshot_filename.hip'
+
+    sequence_task_houdini_workfile:
+        definition: '@sequence_task_filename.hip'
+    sequence_task_houdini_snapshot:
+        definition: '@sequence_task_snapshot_filename.hip'
+
+    shot_houdini_workfile:
+        definition: '@shot_filename.hip'
+    shot_houdini_snapshot:
+        definition: '@shot_snapshot_filename.hip'
+
+    shot_task_houdini_workfile:
+        definition: '@shot_task_filename.hip'
+    shot_task_houdini_snapshot:
+        definition: '@shot_task_snapshot_filename.hip'
+
+    asset_child_houdini_workfile:
+        definition: '@asset_child_filename.hip'
+    asset_child_houdini_snapshot:
+        definition: '@asset_child_snapshot_filename.hip'
+
+    anim_asset_houdini_workfile:
+        definition: '@anim_asset_filename.hip'
+    anim_asset_houdini_snapshot:
+        definition: '@anim_asset_snapshot_filename.hip'        
+
+    env_asset_houdini_workfile:
+        definition: '@env_asset_filename.hip'
+    env_asset_houdini_snapshot:
+        definition: '@env_asset_snapshot_filename.hip'
+
+    pub_asset_houdini_workfile:
+        definition: '@pub_asset_filename.hip'
+    pub_asset_houdini_snapshot:
+        definition: '@pub_asset_snapshot_filename.hip'  
+
+    prod_asset_houdini_workfile:
+        definition: '@prod_asset_filename.hip'
+    prod_asset_houdini_snapshot:
+        definition: '@prod_asset_snapshot_filename.hip'  
+
+    #
+    # 3dsmax
+    #
+
+    # asset
+    asset_max_workfile:
+        definition: '@asset_filename.max'
+    asset_max_snapshot:
+        definition: '@asset_snapshot_filename.max'
+
+    asset_child_max_workfile:
+        definition: '@asset_child_filename.max'
+    asset_child_max_snapshot:
+        definition: '@asset_child_snapshot_filename.max'
+
+    anim_asset_max_workfile:
+        definition: '@anim_asset_filename.max'
+    anim_asset_max_snapshot:
+        definition: '@anim_asset_snapshot_filename.max'        
+
+    env_asset_max_workfile:
+        definition: '@env_asset_filename.max'
+    env_asset_max_snapshot:
+        definition: '@env_asset_snapshot_filename.max'
+
+    pub_asset_max_workfile:
+        definition: '@pub_asset_filename.max'
+    pub_asset_max_snapshot:
+        definition: '@pub_asset_snapshot_filename.max'
+
+    prod_asset_max_workfile:
+        definition: '@prod_asset_filename.max'
+    prod_asset_max_snapshot:
+        definition: '@prod_asset_snapshot_filename.max'        
+
+    #
+    # Substance Painter
+    #
+
+    # asset
+    asset_substancepainter_workfile:
+        definition: '@asset_filename.spp'
+    asset_substancepainter_snapshot:
+        definition: '@asset_snapshot_filename.spp'
+
+    asset_child_substancepainter_workfile:
+        definition: '@asset_child_filename.spp'
+    asset_child_substancepainter_snapshot:
+        definition: '@asset_child_snapshot_filename.spp'
+
+    env_asset_substancepainter_workfile:
+        definition: '@env_asset_filename.spp'
+    env_asset_substancepainter_snapshot:
+        definition: '@env_asset_snapshot_filename.spp'
+
+    pub_asset_substancepainter_workfile:
+        definition: '@pub_asset_filename.spp'
+    pub_asset_substancepainter_snapshot:
+        definition: '@pub_asset_snapshot_filename.spp'
+
+    prod_asset_substancepainter_workfile:
+        definition: '@prod_asset_filename.spp'
+    prod_asset_substancepainter_snapshot:
+        definition: '@prod_asset_snapshot_filename.spp'      
+
+    # The folder where the textures are exported for a project
+    substancepainter_asset_textures_path_export:
+        definition: '@asset_root/Textures'
+        root_name: 'primary'
+
+    # a texture folder publish
+    substancepainter_asset_texture_path_publish:
+        definition: '@asset_root/Textures/{Asset}_{texture_name}.{texture_extension}'
+        root_name: 'primary'  
+
+    #
+    # Substance Designer
+    #
+
+    # asset
+    asset_substancedesigner_workfile:
+        definition: '@asset_filename.{substancedesigner.extension}'
+    asset_substancedesigner_snapshot:
+        definition: '@asset_snapshot_filename.{substancedesigner.extension}'
+
+    asset_child_substancedesigner_workfile:
+        definition: '@asset_child_filename.{substancedesigner.extension}'
+    asset_child_substancedesigner_snapshot:
+        definition: '@asset_child_snapshot_filename.{substancedesigner.extension}'
+
+    env_asset_substancedesigner_workfile:
+        definition: '@env_asset_filename.{substancedesigner.extension}'
+    env_asset_substancedesigner_snapshot:
+        definition: '@env_asset_snapshot_filename.{substancedesigner.extension}'
+
+    pub_asset_substancedesigner_workfile:
+        definition: '@pub_asset_filename.{substancedesigner.extension}'
+    pub_asset_substancedesigner_snapshot:
+        definition: '@pub_asset_snapshot_filename.{substancedesigner.extension}'
+
+    prod_asset_substancedesigner_workfile:
+        definition: '@prod_asset_filename.{substancedesigner.extension}'
+    prod_asset_substancedesigner_snapshot:
+        definition: '@prod_asset_snapshot_filename.{substancedesigner.extension}'        
+
+    #
+    # Unreal
+    #
+
+    # Placeholder location for static mesh assets exported from Unreal
+    # Hook implementation intended to be a starting point for a pipeline
+    # No context info used in template, developers expected to further customize
+    unreal_asset_publish:
+        definition: 'assets/unrealdemo/exports/{YYYY}_{MM}_{DD}/{name}.fbx'
+        
+    # asset
+    asset_unreal_workfile:
+        definition: '@asset_filename.umap'
+    asset_unreal_snapshot:
+        definition: '@asset_snapshot_filename.umap'
+
+    sequence_unreal_workfile:
+        definition: '@sequence_filename.umap'
+    sequence_unreal_snapshot:
+        definition: '@sequence_snapshot_filename.umap'
+
+    sequence_task_unreal_workfile:
+        definition: '@sequence_task_filename.umap'
+    sequence_task_unreal_snapshot:
+        definition: '@sequence_task_snapshot_filename.umap'
+
+    shot_unreal_workfile:
+        definition: '@shot_filename.umap'
+    shot_unreal_snapshot:
+        definition: '@shot_snapshot_filename.umap'
+
+    shot_task_unreal_workfile:
+        definition: '@shot_task_filename.umap'
+    shot_task_unreal_snapshot:
+        definition: '@shot_task_snapshot_filename.umap'
+
+    asset_child_unreal_workfile:
+        definition: '@asset_child_filename.umap'
+    asset_child_unreal_snapshot:
+        definition: '@asset_child_snapshot_filename.umap'
+
+    anim_asset_unreal_workfile:
+        definition: '@anim_asset_filename.umap'
+    anim_asset_unreal_snapshot:
+        definition: '@anim_asset_snapshot_filename.umap'
+    
+    env_asset_unreal_workfile:
+        definition: '@env_asset_filename.umap'
+    env_asset_unreal_snapshot:
+        definition: '@env_asset_snapshot_filename.umap'
+
+    pub_asset_unreal_workfile:
+        definition: '@pub_asset_filename.umap'
+    pub_asset_unreal_snapshot:
+        definition: '@pub_asset_snapshot_filename.umap'
+
+    prod_asset_unreal_workfile:
+        definition: '@prod_asset_filename.umap'
+    prod_asset_unreal_snapshot:
+        definition: '@prod_asset_snapshot_filename.umap'
+
+#
+# The strings section is similar to the paths section - but rather than defining paths
+# on disk, it contains a list of strings. Strings are typically used when you want to be
+# able to configure the way data is written to shotgun - it may be the name field for a
+# review version or the formatting of a publish.
+#
+
+strings:
+
+    # we have to have a string here
+    null_string: string
+
+    # entity-specific templates for importing files into the Unreal content browser
+    # template logic is defined in Python, not settings:
+    # tk-unreal/hooks/tk-multi-loader2/tk-unreal_actions.py
+    unreal_loader_asset_path: "/Game/Assets/{sg_asset_type_ue4}/{sg_asset_name}/"
+    unreal_loader_asset_name: "{sg_asset_name}_{name}"
+    unreal_loader_shot_path: "/Game/Cinematics/Sequences/{sg_sequence_name}/{sg_shot_name}/"
+    unreal_loader_shot_name: "{sg_shot_name}_{name}"
+    unreal_loader_project_path: "/Game/Assets/"
+    unreal_loader_project_name: "{name}"

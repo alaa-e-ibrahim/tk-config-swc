@@ -1,0 +1,158 @@
+# Copyright (c) 2017 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+#
+
+################################################################################
+
+includes:
+- ../engine_locations.yml
+- ./tk-multi-launchapp.yml
+- ./tk-multi-publish2.yml
+- ./tk-multi-perforce.yml
+- ./tk-shotgun-folders.yml
+- ./tk-shotgun-launchfolder.yml
+- ./tk-copyfromplaylist.yml
+
+################################################################################
+
+# asset & asset_child & sequence
+settings.tk-shotgun.asset:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+settings.tk-shotgun.sequence:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+# asset_step & asset_child_step
+settings.tk-shotgun.asset_step:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp.shotgun"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+# sequence_step
+settings.tk-shotgun.sequence_step:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp.shotgun"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+# shot_step
+settings.tk-shotgun.shot_step:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp.shotgun"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+# env_asset
+settings.tk-shotgun.env_asset:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+# env_asset_step
+settings.tk-shotgun.env_asset_step:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp.shotgun"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+# pub_asset
+settings.tk-shotgun.pub_asset:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+# prod_asset
+settings.tk-shotgun.prod_asset:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"  
+
+# pub_asset_step
+settings.tk-shotgun.pub_asset_step:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp.shotgun"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+# prod_asset_step
+settings.tk-shotgun.prod_asset_step:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp.shotgun"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-shotgun-folders: "@settings.tk-shotgun-folders"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"  
+
+# project
+settings.tk-shotgun.project:
+  apps:
+    tk-multi-launchapp: "@settings.tk-multi-launchapp"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+  location: "@engines.tk-shotgun.location"
+
+# version
+settings.tk-shotgun.version:
+  apps:
+  location: "@engines.tk-shotgun.location"
+
+# playlist
+settings.tk-shotgun.playlist:
+  apps:
+    tk-copyfromplaylist: "@settings.tk-copyfromplaylist"
+  location: "@engines.tk-shotgun.location"  
+
+# publishedfile
+settings.tk-shotgun.publishedfile:
+  apps:
+    tk-shotgun-launchfolder: "@settings.tk-shotgun-launchfolder"
+    tk-multi-perforce: "@settings.tk-multi-perforce"
+  location: "@engines.tk-shotgun.location"

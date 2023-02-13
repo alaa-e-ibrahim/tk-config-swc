@@ -1,0 +1,422 @@
+# Copyright (c) 2017 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+
+################################################################################
+
+includes:
+- ../app_locations.yml
+
+################################################################################
+
+# ---- 3dsMax
+
+# asset_step
+settings.tk-multi-snapshot.3dsmax.asset_step:
+  template_snapshot: asset_max_snapshot
+  template_work: asset_max_workfile
+  hook_scene_operation: "{engine}/tk-multi-snapshot/basic/scene_operation.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# asset_child_step
+settings.tk-multi-snapshot.3dsmax.asset_child_step:
+  template_snapshot: asset_child_max_snapshot
+  template_work: asset_child_max_workfile
+  hook_scene_operation: "{engine}/tk-multi-snapshot/basic/scene_operation.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# seq_asset_step
+settings.tk-multi-snapshot.3dsmax.seq_asset_step:
+  template_snapshot: seq_asset_max_snapshot
+  template_work: seq_asset_max_workfile
+  hook_scene_operation: "{engine}/tk-multi-snapshot/basic/scene_operation.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# anim_asset_step
+settings.tk-multi-snapshot.3dsmax.anim_asset_step:
+  template_snapshot: anim_asset_max_snapshot
+  template_work: anim_asset_max_workfile
+  hook_scene_operation: "{engine}/tk-multi-snapshot/basic/scene_operation.py"
+  location: "@apps.tk-multi-snapshot.location"  
+
+# pub_asset_step
+settings.tk-multi-snapshot.3dsmax.pub_asset_step:
+  template_snapshot: pub_asset_max_snapshot
+  template_work: pub_asset_max_workfile
+  hook_scene_operation: "{engine}/tk-multi-snapshot/basic/scene_operation.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# prod_asset_step
+settings.tk-multi-snapshot.3dsmax.prod_asset_step:
+  template_snapshot: prod_asset_max_snapshot
+  template_work: prod_asset_max_workfile
+  hook_scene_operation: "{engine}/tk-multi-snapshot/basic/scene_operation.py"
+  location: "@apps.tk-multi-snapshot.location"  
+
+# env_asset_step
+settings.tk-multi-snapshot.3dsmax.env_asset_step:
+  template_snapshot: env_asset_max_snapshot
+  template_work: env_asset_max_workfile
+  hook_scene_operation: "{engine}/tk-multi-snapshot/basic/scene_operation.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+################################################################################
+
+# ---- Houdini
+
+# asset_step
+settings.tk-multi-snapshot.houdini.asset_step:
+  template_snapshot: asset_houdini_snapshot
+  template_work: asset_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# sequence
+settings.tk-multi-snapshot.houdini.sequence:
+  template_snapshot: sequence_houdini_snapshot
+  template_work: sequence_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# sequence_step
+settings.tk-multi-snapshot.houdini.sequence_step:
+  template_snapshot: sequence_task_houdini_snapshot
+  template_work: sequence_task_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# shot
+settings.tk-multi-snapshot.houdini.shot:
+  template_snapshot: shot_houdini_snapshot
+  template_work: shot_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# shot_step
+settings.tk-multi-snapshot.houdini.shot_step:
+  template_snapshot: shot_task_houdini_snapshot
+  template_work: shot_task_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# asset_child_step
+settings.tk-multi-snapshot.houdini.asset_child_step:
+  template_snapshot: asset_child_houdini_snapshot
+  template_work: asset_child_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# seq_asset_step
+settings.tk-multi-snapshot.houdini.seq_asset_step:
+  template_snapshot: seq_asset_houdini_snapshot
+  template_work: seq_asset_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# anim_asset_step
+settings.tk-multi-snapshot.houdini.anim_asset_step:
+  template_snapshot: anim_asset_houdini_snapshot
+  template_work: anim_asset_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"  
+
+# pub_asset_step
+settings.tk-multi-snapshot.houdini.pub_asset_step:
+  template_snapshot: pub_asset_houdini_snapshot
+  template_work: pub_asset_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# prod_asset_step
+settings.tk-multi-snapshot.houdini.prod_asset_step:
+  template_snapshot: prod_asset_houdini_snapshot
+  template_work: prod_asset_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# env_asset_step
+settings.tk-multi-snapshot.houdini.env_asset_step:
+  template_snapshot: env_asset_houdini_snapshot
+  template_work: env_asset_houdini_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+################################################################################
+
+# ---- Maya
+
+# asset_step
+settings.tk-multi-snapshot.maya.asset_step:
+  template_snapshot: asset_maya_snapshot
+  template_work: asset_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# sequence
+settings.tk-multi-snapshot.maya.sequence:
+  template_snapshot: sequence_maya_snapshot
+  template_work: sequence_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# sequence_step
+settings.tk-multi-snapshot.maya.sequence_step:
+  template_snapshot: sequence_task_maya_snapshot
+  template_work: sequence_task_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# shot
+settings.tk-multi-snapshot.maya.shot:
+  template_snapshot: shot_maya_snapshot
+  template_work: shot_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# shot_step
+settings.tk-multi-snapshot.maya.shot_step:
+  template_snapshot: shot_task_maya_snapshot
+  template_work: shot_task_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# asset_child_step
+settings.tk-multi-snapshot.maya.asset_child_step:
+  template_snapshot: asset_child_maya_snapshot
+  template_work: asset_child_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# seq_asset_step
+settings.tk-multi-snapshot.maya.seq_asset_step:
+  template_snapshot: seq_asset_maya_snapshot
+  template_work: seq_asset_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# anim_asset_step
+settings.tk-multi-snapshot.maya.anim_asset_step:
+  template_snapshot: anim_asset_maya_snapshot
+  template_work: anim_asset_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"  
+
+# pub_asset_step
+settings.tk-multi-snapshot.maya.pub_asset_step:
+  template_snapshot: pub_asset_maya_snapshot
+  template_work: pub_asset_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# prod_asset_step
+settings.tk-multi-snapshot.maya.prod_asset_step:
+  template_snapshot: prod_asset_maya_snapshot
+  template_work: prod_asset_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"  
+
+# env_asset_step
+settings.tk-multi-snapshot.maya.env_asset_step:
+  template_snapshot: env_asset_maya_snapshot
+  template_work: env_asset_maya_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+################################################################################
+
+# ---- Photoshop
+
+# asset_step
+settings.tk-multi-snapshot.photoshop.asset_step:
+  template_snapshot: asset_photoshop_snapshot
+  template_work: asset_photoshop_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# asset_child_step
+settings.tk-multi-snapshot.photoshop.asset_child_step:
+  template_snapshot: asset_child_photoshop_snapshot
+  template_work: asset_child_photoshop_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# seq_asset_step
+settings.tk-multi-snapshot.photoshop.seq_asset_step:
+  template_snapshot: seq_asset_photoshop_snapshot
+  template_work: seq_asset_photoshop_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# pub_asset_step
+settings.tk-multi-snapshot.photoshop.pub_asset_step:
+  template_snapshot: pub_asset_photoshop_snapshot
+  template_work: pub_asset_photoshop_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# prod_asset_step
+settings.tk-multi-snapshot.photoshop.prod_asset_step:
+  template_snapshot: prod_asset_photoshop_snapshot
+  template_work: prod_asset_photoshop_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# env_asset_step
+settings.tk-multi-snapshot.photoshop.env_asset_step:
+  template_snapshot: env_asset_photoshop_snapshot
+  template_work: env_asset_photoshop_workfile
+  location: "@apps.tk-multi-snapshot.location"  
+
+################################################################################
+
+# ---- Substance Painter
+
+# asset_step
+settings.tk-multi-snapshot.substancepainter.asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancepainter.py"
+  template_snapshot: asset_substancepainter_snapshot
+  template_work: asset_substancepainter_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# asset_child_step
+settings.tk-multi-snapshot.substancepainter.asset_child_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancepainter.py"
+  template_snapshot: asset_child_substancepainter_snapshot
+  template_work: asset_child_substancepainter_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# seq_asset_step
+settings.tk-multi-snapshot.substancepainter.seq_asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancepainter.py"
+  template_snapshot: seq_asset_substancepainter_snapshot
+  template_work: seq_asset_substancepainter_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# pub_asset_step
+settings.tk-multi-snapshot.substancepainter.pub_asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancepainter.py"
+  template_snapshot: pub_asset_substancepainter_snapshot
+  template_work: pub_asset_substancepainter_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# prod_asset_step
+settings.tk-multi-snapshot.substancepainter.prod_asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancepainter.py"
+  template_snapshot: prod_asset_substancepainter_snapshot
+  template_work: prod_asset_substancepainter_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# env_asset_step
+settings.tk-multi-snapshot.substancepainter.env_asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancepainter.py"
+  template_snapshot: env_asset_substancepainter_snapshot
+  template_work: env_asset_substancepainter_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+################################################################################
+
+# ---- Substance Designer
+
+# asset_step
+settings.tk-multi-snapshot.substancedesigner.asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancedesigner.py"
+  template_snapshot: asset_substancedesigner_snapshot
+  template_work: asset_substancedesigner_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# asset_child_step
+settings.tk-multi-snapshot.substancedesigner.asset_child_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancedesigner.py"
+  template_snapshot: asset_child_substancedesigner_snapshot
+  template_work: asset_child_substancedesigner_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# seq_asset_step
+settings.tk-multi-snapshot.substancedesigner.seq_asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancedesigner.py"
+  template_snapshot: seq_asset_substancedesigner_snapshot
+  template_work: seq_asset_substancedesigner_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# pub_asset_step
+settings.tk-multi-snapshot.substancedesigner.pub_asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancedesigner.py"
+  template_snapshot: pub_asset_substancedesigner_snapshot
+  template_work: pub_asset_substancedesigner_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+# prod_asset_step
+settings.tk-multi-snapshot.substancedesigner.prod_asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancedesigner.py"
+  template_snapshot: prod_asset_substancedesigner_snapshot
+  template_work: prod_asset_substancedesigner_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"  
+
+# env_asset_step
+settings.tk-multi-snapshot.substancedesigner.env_asset_step:
+  hook_scene_operation: "{engine}/tk-multi-snapshot/scene_operation_tk-substancedesigner.py"
+  template_snapshot: env_asset_substancedesigner_snapshot
+  template_work: env_asset_substancedesigner_workfile
+  hook_thumbnail: "{engine}/thumbnail.py"
+  location: "@apps.tk-multi-snapshot.location"
+
+
+################################################################################
+
+# ---- unreal
+
+# asset_step
+settings.tk-multi-snapshot.unreal.asset_step:
+  template_snapshot: asset_unreal_snapshot
+  template_work: asset_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# sequence
+settings.tk-multi-snapshot.unreal.sequence:
+  template_snapshot: sequence_unreal_snapshot
+  template_work: sequence_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# sequence_step
+settings.tk-multi-snapshot.unreal.sequence_step:
+  template_snapshot: sequence_task_unreal_snapshot
+  template_work: sequence_task_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# shot
+settings.tk-multi-snapshot.unreal.shot:
+  template_snapshot: shot_unreal_snapshot
+  template_work: shot_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# shot_step
+settings.tk-multi-snapshot.unreal.shot_step:
+  template_snapshot: shot_task_unreal_snapshot
+  template_work: shot_task_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# asset_child_step
+settings.tk-multi-snapshot.unreal.asset_child_step:
+  template_snapshot: asset_child_unreal_snapshot
+  template_work: asset_child_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# seq_asset_step
+settings.tk-multi-snapshot.unreal.seq_asset_step:
+  template_snapshot: seq_asset_unreal_snapshot
+  template_work: seq_asset_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# anim_asset_step
+settings.tk-multi-snapshot.unreal.anim_asset_step:
+  template_snapshot: anim_asset_unreal_snapshot
+  template_work: anim_asset_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# pub_asset_step
+settings.tk-multi-snapshot.unreal.pub_asset_step:
+  template_snapshot: pub_asset_unreal_snapshot
+  template_work: pub_asset_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# prod_asset_step
+settings.tk-multi-snapshot.unreal.prod_asset_step:
+  template_snapshot: prod_asset_unreal_snapshot
+  template_work: prod_asset_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"
+
+# env_asset_step
+settings.tk-multi-snapshot.unreal.env_asset_step:
+  template_snapshot: env_asset_unreal_snapshot
+  template_work: env_asset_unreal_workfile
+  location: "@apps.tk-multi-snapshot.location"

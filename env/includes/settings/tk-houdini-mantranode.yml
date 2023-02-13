@@ -1,0 +1,86 @@
+# Copyright (c) 2017 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+
+################################################################################
+
+includes:
+- ../app_locations.yml
+
+################################################################################
+
+# asset step
+settings.tk-houdini-mantranode.asset_step:
+  work_file_template: asset_houdini_workfile
+  default_node_name: sg_mantra_out
+  output_profiles:
+  - name: Default Render
+    settings: {}
+    color: []
+    output_render_template: houdini_asset_render
+    output_ifd_template: houdini_asset_ifd
+    output_dcm_template: houdini_asset_dcm
+    output_extra_plane_template: houdini_asset_extra_plane
+  location: "@apps.tk-houdini-mantranode.location"
+
+# asset_child_step
+settings.tk-houdini-mantranode.asset_child_step:
+  work_file_template: asset_child_houdini_workfile
+  default_node_name: sg_mantra_out
+  output_profiles:
+  - name: Default Render
+    settings: {}
+    color: []
+    output_render_template: houdini_asset_render
+    output_ifd_template: houdini_asset_ifd
+    output_dcm_template: houdini_asset_dcm
+    output_extra_plane_template: houdini_asset_extra_plane
+  location: "@apps.tk-houdini-mantranode.location"
+
+# pub_asset step
+settings.tk-houdini-mantranode.pub_asset_step:
+  work_file_template: pub_asset_houdini_workfile
+  default_node_name: sg_mantra_out
+  output_profiles:
+  - name: Default Render
+    settings: {}
+    color: []
+    output_render_template: houdini_asset_render
+    output_ifd_template: houdini_asset_ifd
+    output_dcm_template: houdini_asset_dcm
+    output_extra_plane_template: houdini_asset_extra_plane
+  location: "@apps.tk-houdini-mantranode.location"
+
+# prod_asset step
+settings.tk-houdini-mantranode.prod_asset_step:
+  work_file_template: prod_asset_houdini_workfile
+  default_node_name: sg_mantra_out
+  output_profiles:
+  - name: Default Render
+    settings: {}
+    color: []
+    output_render_template: houdini_asset_render
+    output_ifd_template: houdini_asset_ifd
+    output_dcm_template: houdini_asset_dcm
+    output_extra_plane_template: houdini_asset_extra_plane
+  location: "@apps.tk-houdini-mantranode.location"  
+
+# env_asset_step
+settings.tk-houdini-mantranode.env_asset_step:
+  work_file_template: env_asset_houdini_workfile
+  default_node_name: sg_mantra_out
+  output_profiles:
+  - name: Default Render
+    settings: {}
+    color: []
+    output_render_template: houdini_asset_render
+    output_ifd_template: houdini_asset_ifd
+    output_dcm_template: houdini_asset_dcm
+    output_extra_plane_template: houdini_asset_extra_plane
+  location: "@apps.tk-houdini-mantranode.location"

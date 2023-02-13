@@ -1,0 +1,202 @@
+# Copyright (c) 2017 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+#
+
+################################################################################
+
+includes:
+- ../app_locations.yml
+- ../engine_locations.yml
+- ./tk-multi-loader2.yml
+- ./tk-swc-perforce-sync.yml
+- ./tk-multi-publish2.yml
+- ./tk-multi-screeningroom.yml
+- ./tk-multi-shotgunpanel.yml
+- ./tk-multi-snapshot.yml
+- ./tk-multi-workfiles2.yml
+- ./tk-multi-perforce.yml
+
+################################################################################
+# asset and asset_child
+settings.tk-unreal.asset:
+  apps:
+    tk-multi-about:
+      location: "@apps.tk-multi-about.location"
+    tk-multi-loader2: "@settings.tk-multi-loader2.unreal"
+    tk-multi-shotgunpanel: "@settings.tk-multi-shotgunpanel"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.launch_at_startup"
+    #tk-multi-perforce: "@settings.tk-multi-perforce"
+    tk-multi-publish2: "@settings.tk-multi-publish2.standalone"
+  #menu_favourites:
+  #- {app_instance: tk-multi-workfiles2, name: File Open...}
+  #- {app_instance: tk-multi-perforce, name: Perforce Status...}
+  debug_logging: false
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# asset_step
+settings.tk-unreal.asset_step:
+  apps:
+    tk-multi-about:
+      location: "@apps.tk-multi-about.location"
+    tk-multi-loader2: "@settings.tk-multi-loader2.unreal"
+    #tk-multi-publish2: "@settings.tk-multi-publish2.unreal.asset_step"
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    tk-multi-shotgunpanel: "@settings.tk-multi-shotgunpanel.unreal"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.asset_step"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.asset_step"
+    # tk-multi-reviewsubmission: "@settings.tk-multi-reviewsubmission.unreal"
+    #tk-multi-perforce: "@settings.tk-multi-perforce"
+  menu_favourites: &settings_tk-unreal_menu
+  #- {app_instance: tk-multi-workfiles2, name: File Open...}
+  #- {app_instance: tk-multi-workfiles2, name: File Save...}
+  - {app_instance: tk-multi-publish2, name: Publish...}
+  #- {app_instance: tk-multi-perforce, name: Perforce Status...}
+  template_project: asset_work_area
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# sequence
+settings.tk-unreal.sequence:
+  apps:
+    tk-multi-loader2: "@settings.tk-multi-loader2.unreal"
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.sequence"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.sequence"
+  #menu_favourites: *settings_tk-unreal_menu
+  template_project: sequence_root
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# sequence_step
+settings.tk-unreal.sequence_step:
+  apps:
+    tk-multi-loader2: "@settings.tk-multi-loader2.unreal"
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.sequence_step"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.sequence_step"
+  menu_favourites: *settings_tk-unreal_menu
+  template_project: sequence_work_area
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# shot
+settings.tk-unreal.shot:
+  apps:
+    tk-multi-loader2: "@settings.tk-multi-loader2.unreal"
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.shot"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.shot"
+  menu_favourites: *settings_tk-unreal_menu
+  template_project: shot_root
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# shot_step
+settings.tk-unreal.shot_step:
+  apps:
+    tk-multi-loader2: "@settings.tk-multi-loader2.unreal"
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.shot_step"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.shot_step"
+  menu_favourites: *settings_tk-unreal_menu
+  template_project: shot_work_area
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# asset_child_step
+settings.tk-unreal.asset_child_step:
+  apps:
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.asset_child_step"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.asset_child_step"
+  menu_favourites: *settings_tk-unreal_menu
+  template_project: asset_child_work_area
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# seq_asset_step
+settings.tk-unreal.seq_asset_step:
+  apps:
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.seq_asset_step"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.seq_asset_step"
+  menu_favourites: *settings_tk-unreal_menu
+  template_project: seq_asset_work_area
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# anim_asset_step
+settings.tk-unreal.anim_asset_step:
+  apps:
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.anim_asset_step"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.anim_asset_step"
+  menu_favourites: *settings_tk-unreal_menu
+  template_project: anim_asset_work_area
+  automatic_context_switch: False
+  location: "@engines.tk-unreal.location"
+
+# pub_asset_step
+settings.tk-unreal.pub_asset_step:
+  apps:
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.pub_asset_step"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.pub_asset_step"
+  menu_favourites: *settings_tk-unreal_menu
+  template_project: pub_asset_root
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# prod_asset_step
+settings.tk-unreal.prod_asset_step:
+  apps:
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.prod_asset_step"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.prod_asset_step"
+  menu_favourites: *settings_tk-unreal_menu
+  template_project: prod_asset_root
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# env_asset_step
+settings.tk-unreal.env_asset_step:
+  apps:
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    #tk-multi-snapshot: "@settings.tk-multi-snapshot.unreal.env_asset_step"
+    #tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.env_asset_step"
+  menu_favourites: *settings_tk-unreal_menu
+  template_project: env_asset_work_area
+  automatic_context_switch: True
+  location: "@engines.tk-unreal.location"
+
+# project
+settings.tk-unreal.project:
+  apps:
+    tk-multi-about:
+      location: "@apps.tk-multi-about.location"
+    tk-multi-loader2: "@settings.tk-multi-loader2.unreal"
+    tk-multi-publish2: "@settings.tk-multi-publish2.unreal.project"
+    tk-multi-workfiles2: "@settings.tk-multi-workfiles2.unreal.project"
+    tk-multi-pythonconsole:
+      location: "@apps.tk-multi-pythonconsole.location"
+    tk-multi-shotgunpanel: "@settings.tk-multi-shotgunpanel.unreal"
+    #tk-multi-perforce: "@settings.tk-multi-perforce"
+  location: "@engines.tk-unreal.location"
+  menu_favourites: []
+  #menu_favourites:
+  #  - { app_instance: tk-multi-workfiles2, name: File Open... }
+  #  - { app_instance: tk-multi-perforce, name: Perforce Status... }
+  run_at_startup:
+  - {app_instance: tk-multi-shotgunpanel, name: ''}
+  launch_builtin_plugins: [basic]
+  automatic_context_switch: True
+
+

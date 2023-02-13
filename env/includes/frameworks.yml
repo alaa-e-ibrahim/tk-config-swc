@@ -1,0 +1,141 @@
+# Copyright (c) 2017 Shotgun Software Inc.
+#
+# CONFIDENTIAL AND PROPRIETARY
+#
+# This work is provided "AS IS" and subject to the Shotgun Pipeline Toolkit
+# Source Code License included in this distribution package. See LICENSE.
+# By accessing, using, copying or modifying this work you indicate your
+# agreement to the Shotgun Pipeline Toolkit Source Code License. All rights
+# not expressly granted therein are reserved by Shotgun Software Inc.
+#
+
+################################################################################
+# A single, top-level setting is defined: "@frameworks". This setting can
+# be included and referenced wherever shared frameworks are required.
+
+frameworks:
+# ---- Shotgun Software Frameworks
+
+  # adobe - Common functionality for adobe products
+  tk-framework-adobe_v1.x.x:
+    location:
+      type: app_store
+      name: tk-framework-adobe
+      version: v1.1.6
+  # adminui - provides GUIs for administrative commands
+  tk-framework-adminui_v0.x.x:
+    location:
+      type: app_store
+      name: tk-framework-adminui
+      version: v0.7.2
+  # desktopserver - provides a server to run local commands.
+  tk-framework-desktopserver_v1.x.x:
+    location:
+      type: app_store
+      name: tk-framework-desktopserver
+      version: v1.5.3
+  # qtwidgets - collection of Toolkit related QT Widgets
+  tk-framework-qtwidgets_v2.x.x:
+    location:
+      #type: app_store
+      #name: tk-framework-qtwidgets
+      #version: v2.10.2
+      #type: dev
+      #path: "S:/Projects/ShotgunConfig/tk-framework-qtwidgets"
+      type: git
+      path: https://github.com/WildcardProperties/tk-framework-qtwidgets.git
+      version: v1.0
+
+  # shotgunutils v4 - Shotgun Related Utilities
+  tk-framework-shotgunutils_v4.x.x:
+    location:
+      version: v4.4.15
+      type: app_store
+      name: tk-framework-shotgunutils
+
+  # shotgunutils v5 - Shotgun Related Utilities
+  tk-framework-shotgunutils_v5.x.x:
+    location:
+      type: dev
+      path: "S:/Projects/ShotgunConfig/tk-framework-shotgunutils"
+      #type: app_store
+      #name: tk-framework-shotgunutils
+      #version: v5.8.5
+      #type: git_branch
+      #branch: main
+      #path: https://github.com/alaa-e-ibrahim/tk-framework-shotgunutils
+      #version:
+  tk-swc-framework-shotgunutils_v5.x.x:
+    location:
+      #type: dev
+      #path: "S:/Projects/ShotgunConfig/tk-swc-framework-shotgunutils"
+      type: git_branch
+      branch: swc_main_ai
+      path: https://github.com/alaa-e-ibrahim/tk-swc-framework-shotgunutils
+      version: 55bbcfd
+
+  # widget v0 - QT Widget Framework for Tank Apps (qtwidgets fw predecessor)
+  tk-framework-widget_v0.2.x:
+    location:
+      version: v0.2.8
+      type: app_store
+      name: tk-framework-widget
+
+  # widget v1 - QT Widget Framework for Tank Apps (qtwidgets fw predecessor)
+  tk-framework-widget_v1.x.x:
+    location:
+      type: app_store
+      name: tk-framework-widget
+      version: v1.1.1
+  # desktopclient - A client for Shotgun Create
+  tk-framework-desktopclient_v0.x.x:
+    location:
+      type: app_store
+      name: tk-framework-desktopclient
+      version: v0.3.2
+  # lmv - provides LMV conversion tools
+  tk-framework-lmv_v0.x.x:
+    location:
+      type: app_store
+      name: tk-framework-lmv
+      version: v0.2.2
+# ---- 3rd Party Frameworks
+
+  # unrealqt - PySide build for Unreal (Windows-only)
+  # also used by substance painter and designer
+  tk-framework-unrealqt_v1.x.x:
+    location:
+      organization: ue4plugins
+      repository: tk-framework-unrealqt
+      version: v1.2.3
+      type: github_release
+# ---- Custom Frameworks
+
+  # perforce - provides connection to perforce
+  tk-framework-perforce_v0.x.x:
+    hook_get_perforce_user: '{config}/tk-framework-perforce/get_perforce_user.py'
+    hook_get_shotgun_user: '{config}/tk-framework-perforce/get_shotgun_user.py'
+    location:
+      # # Dev
+      #type: dev
+      #path: "S:/Projects/ShotgunConfig/tk-framework-perforce"
+      # Github
+      type: git_branch
+      branch: swc_beta_rb_ai
+      path: https://gitlab.com/nexodus/consulting/swc/tk-framework-perforce.git
+      version: 2d86011
+
+  # SWC - Custom utilities
+  tk-framework-swc_v0.x.x:
+    location:
+      # # Dev
+      # type: dev
+      # path: 'S:/Projects/ShotgunConfig/tk-framework-swc'
+      # # Github
+      # path: https://github.com/studiowildcard/tk-framework-swc
+      # version: 1a5e999
+      # type: git_branch
+      # branch: main
+      type: git
+      path: https://github.com/studiowildcard/tk-framework-swc
+      version: v1.4.0
