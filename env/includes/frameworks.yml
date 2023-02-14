@@ -56,11 +56,11 @@ frameworks:
   # shotgunutils v5 - Shotgun Related Utilities
   tk-framework-shotgunutils_v5.x.x:
     location:
-      type: dev
-      path: "S:/Projects/ShotgunConfig/tk-framework-shotgunutils"
-      #type: app_store
-      #name: tk-framework-shotgunutils
-      #version: v5.8.5
+      #type: dev
+      #path: "S:/Projects/ShotgunConfig/tk-framework-shotgunutils"
+      type: app_store
+      name: tk-framework-shotgunutils
+      version: v5.8.5
       #type: git_branch
       #branch: main
       #path: https://github.com/alaa-e-ibrahim/tk-framework-shotgunutils
