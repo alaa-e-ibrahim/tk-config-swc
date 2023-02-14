@@ -72,7 +72,7 @@ frameworks:
       type: git_branch
       branch: swc_main_ai
       path: https://github.com/alaa-e-ibrahim/tk-swc-framework-shotgunutils
-      version: 55bbcfd
+      version: a3681fc
 
   # widget v0 - QT Widget Framework for Tank Apps (qtwidgets fw predecessor)
   tk-framework-widget_v0.2.x:
